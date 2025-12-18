@@ -9,3 +9,4 @@ onnxruntime
 requests
 pyyaml
 tqdm
+tokenizers
