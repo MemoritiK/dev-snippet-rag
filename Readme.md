@@ -1,7 +1,6 @@
-# FAISS Code Retreival Tool
+# FAISS Code Retrieval Tool
 
 A **web-based tool for Python developers** to quickly search, explore, and understand data analysis code snippets. Designed for **fast reference** when stuck or exploring new techniques, combining **FAISS semantic search** with **AI-powered explanations**.
-
 
 ## Features
 
@@ -12,7 +11,7 @@ A **web-based tool for Python developers** to quickly search, explore, and under
   Works with `numpy`, `pandas`, `scipy`, `matplotlib`, `seaborn`, and more.
 
 * **AI Explanations**
-  Click a snippet to get clear, concise AI-generated explanations using DeepSeek LLM.
+  Click a snippet to get clear, concise AI-generated explanations using kat-coder-pro.
 
 * **Copy-to-Clipboard**
   Easily copy code snippets for reuse in your own projects.
@@ -20,12 +19,11 @@ A **web-based tool for Python developers** to quickly search, explore, and under
 * **Category & Context Display**
   Each snippet shows its core category and an associated question for context.
 
-* **Planned: Run Snippets**
-  Future feature: Execute code snippets directly in a sandboxed environment with inline output.
+* **Run Snippets**
+  Execute code snippets directly in a sandboxed environment with inline output.
 
 * **Clean, Minimal UI**
   Streamlit-based frontend for quick access and smooth workflow.
-
 
 ## How It Works
 
@@ -44,16 +42,19 @@ A **web-based tool for Python developers** to quickly search, explore, and under
 5. **Copy**
    Click “Copy” → snippet code copied to clipboard.
 
-6. **Future Execution**
+6. **Execution**
    Click “Run” → backend executes code safely → output or plots shown inline.
 
+## Live Demo
+
+* **Frontend:** [https://faiss-data-analysis-snippets-9qgw4qsfc5jviqqkckwikv.streamlit.app/](https://faiss-data-analysis-snippets-9qgw4qsfc5jviqqkckwikv.streamlit.app/)
+* **Backend API:** [https://faiss-data-analysis-snippets.onrender.com](https://faiss-data-analysis-snippets.onrender.com)
 
 ## Tech Stack
 
 * **Backend:** Python, Flask, FAISS, NumPy, pickle, ONNX Runtime
 * **Frontend:** Streamlit
-* **AI:** DeepSeek LLM for explanations
-
+* **AI:** kwaipilot/kat-coder-pro:free from OpenRouter
 
 ## Installation
 
@@ -65,10 +66,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-
 ## Usage
 
-1. Start the Flask backend:
+1. Start the Flask backend from /backend:
 
 ```bash
 python app.py
@@ -81,7 +81,6 @@ streamlit run frontend.py
 ```
 
 3. Open the browser at the Streamlit URL and start searching code snippets.
-
 
 ## Environment Variables
 
@@ -97,26 +96,23 @@ In your requests:
 headers = {"Authorization": f"Bearer {API_KEY}"}
 ```
 
-
 ## Requirements
 
 ```text
-Flask==2.3.4
-flask-cors==3.0.10
-numpy==1.27.5
-pandas==2.1.2
-matplotlib==3.8.1
-seaborn==0.12.3
-scipy==1.11.1
-faiss-cpu==1.7.4
-requests==2.31.0
-pyyaml==6.0
-tqdm==4.66.1
-onnxruntime==1.15.1
+Flask
+flask-cors
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+faiss-cpu
+requests
+pyyaml
+tqdm
+onnxruntime
 statistics
 random
 pathlib
 json
 ```
-
-
