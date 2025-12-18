@@ -7,7 +7,7 @@ st.set_page_config(
     layout="centered"
 )
 
-BACKEND_URL = "http://127.0.0.1:5000"
+BACKEND_URL = "https://faiss-data-analysis-snippets.onrender.com/"
 
 if "results" not in st.session_state:
     st.session_state.results = []
