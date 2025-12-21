@@ -1,29 +1,69 @@
-# FAISS Code Retrieval Tool
+# Dev Snippet RAG
+A lightweight, IDE-adjacent code retrieval tool for Python data analysis developers who need **instant reference examples** when stuck mid-implementation.
 
-A **web-based tool for Python developers** to quickly search, explore, and understand data analysis code snippets. Perfect for situations when you’re stuck, confused, or need a quick reference. Combines **FAISS semantic search** with **LLM-powered explanations** for instant insights.
+This project focuses on **retrieving known working code patterns**, explaining them clearly, and optionally executing them to confirm intent — without breaking developer flow.
 
-## Features
 
-* **Fast Code Search**:
-  Search 800+ Python snippets using keywords, partial code, or natural language queries.
+## Problem
+When writing data analysis code, developers often:
+- Remember *what* they want to do but not the exact syntax
+- Get stuck mid-implementation
+- Need a quick, reliable reference without searching the web
+- Want to confirm behavior before copying code into their IDE
 
-* **Data Analysis Library Support**:
-  Works with `numpy`, `pandas`, `scipy`, `matplotlib`, `seaborn`, and more.
+Traditional search engines and chatbots are slow, noisy, or opaque for this use case.
 
-* **AI Explanations**:
-  Click a snippet to get clear, concise AI-generated explanations using kat-coder-pro.
 
-* **Copy-to-Clipboard**:
-  Easily copy code snippets for reuse in your own projects.
+## Solution
+Instant Code RAG provides:
+- Semantic retrieval of curated Python data analysis snippets
+- Grounded AI explanations strictly based on retrieved code
+- Optional execution to verify behavior
+- Minimal UI designed for quick reference, not conversation
 
-* **Category & Context Display**:
-  Each snippet shows its core category and an associated question for context.
+This is **retrieval-augmented generation grounded in executable code**, not a general-purpose chatbot.
 
-* **Run Snippets**:
-  Execute code snippets directly in a sandboxed environment with inline output.
+## Key Features
 
-* **Clean, Minimal UI**:
-  Streamlit-based frontend for quick access and smooth workflow.
+### Semantic Code Retrieval
+- Search 800+ curated Python snippets using:
+  - Natural language
+  - Keywords
+  - Partial or incomplete code
+- Powered by FAISS vector search
+
+### Grounded Explanations
+- AI-generated explanations constrained to the retrieved snippet
+- Focused on intent, usage, and key lines
+- No hallucinated fixes or speculative code
+
+### Optional Execution
+- Execute snippets in a sandboxed environment
+- View outputs or plots inline
+- Used for **confirmation**, not exploration
+
+### Metadata-Aware Results
+Each snippet includes:
+- Difficulty level
+- Relevance score
+- Category (NumPy, Pandas, Matplotlib, etc.)
+- Associated intent question
+
+### Copy-to-Clipboard
+- One-click copy for immediate reuse in your IDE
+
+## Intended Workflow
+
+1. You are writing data analysis code in an IDE
+2. You get stuck or forget a pattern
+3. You open Instant Code RAG
+4. You:
+   - Describe what you want to do **or**
+   - Paste partial / incorrect code
+5. The system retrieves the closest known working pattern
+6. You read a short explanation to confirm intent
+7. Optionally execute to verify output
+8. Copy and return to your IDE
 
 ## How It Works
 
